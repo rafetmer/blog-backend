@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2020",                                /* Modern JavaScript sürümüne derle */
+    "module": "commonjs",                              /* Node.js için standart modül sistemi */
+    "rootDir": "./src",                                /* TypeScript kaynak dosyalarının kök dizini */
+    "outDir": "./dist",                                /* Derlenmiş JavaScript dosyalarının çıkış dizini */
+    "esModuleInterop": true,                           /* CommonJS ve ES modülleri arasında uyumluluk sağlar */
+    "forceConsistentCasingInFileNames": true,          /* Dosya adı büyük/küçük harf tutarlılığını zorunlu kılar */
+    "strict": true,                                    /* Tüm katı tip kontrolü seçeneklerini etkinleştirir */
+    "skipLibCheck": true                               /* Bağımlılıkların tip tanımlarını kontrol etmeyi atlar */
+  },
+  "include": ["src/**/*"]                              /* Derlenecek dosyaları belirtir */
+}

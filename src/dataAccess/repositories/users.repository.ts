@@ -16,4 +16,9 @@ export class UserRepository {
         return prisma.users.findUnique({where: { username } })
     }
     async update(user_id: number, data: Partial<users>): Promise<users> {
-        retur
+        return prisma.users.update({where: { user_id }, data});
+    }
+    async delete(user_id: number): Promise<users>{
+        return prisma.users.delete({where: { user_id }});
+    }
+}

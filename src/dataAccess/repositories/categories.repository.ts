@@ -20,3 +20,8 @@ export class CategoryRepository {
     async update(category_id: number, data: Partial<categories>): Promise<categories> {
         return prisma.categories.update({where: { category_id }, data});
     }
+    async delete(category_id: number): Promise<categories> {
+        return prisma.categories.delete({where: { category_id }});
+    }
+
+}

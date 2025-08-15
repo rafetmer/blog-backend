@@ -4,8 +4,8 @@ export class CategoryService {
     private categoryRepo = new CategoryRepository();
 
     async createCategory(name: string) {
-        const existing = await this.categoryRepo.findAll();
-        if(existing.some(cat => cat.name ===name)) {
+        const existing = await this.categoryRepo.findByName(name);
+        if(existing) {
             throw new Error("This category already exists.")
         }
         return this.categoryRepo.create( { name });

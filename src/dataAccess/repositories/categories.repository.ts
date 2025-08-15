@@ -13,6 +13,10 @@ export class CategoryRepository {
     async findById(category_id: number): Promise<categories | null>{
         return prisma.categories.findUnique({where: {category_id}});
     }
+
+    async findByName(name: string): Promise<categories | null> {
+        return prisma.posts.findUnique({ where: { name } })
+    }
     async update(category_id: number, data: Partial<categories>): Promise<categories> {
         return prisma.categories.update({where: { category_id }, data});
     }

@@ -12,6 +12,10 @@ export class PostsRepository {
     async findById(post_id: number): Promise<posts | null> {
         return prisma.posts.findUnique({ where: { post_id }});
     }
+
+    async findByTitle(title: string): Promise<posts | null> {
+        return prisma.posts.findFirst({ where: { title } })
+    }
     async update(post_id: number, data: Partial<posts>): Promise<posts> {
         return prisma.posts.update({where: { post_id }, data });
     }

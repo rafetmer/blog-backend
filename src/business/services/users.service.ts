@@ -11,7 +11,7 @@ export class UserService {
         return this.userRepo.create({username, email, password_hash});
     }
 
-    async getAllUser(){
+    async getAllUsers(){
         return this.userRepo.findAll();
     }
 

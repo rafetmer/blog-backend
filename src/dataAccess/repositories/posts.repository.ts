@@ -2,7 +2,7 @@ import { PrismaClient, posts } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export class PostsRepository {
+export class PostRepository {
     async create(data: { author_id: number; category_id?: number; title: string; content:string }): Promise<posts> {
         return prisma.posts.create({ data });
     }

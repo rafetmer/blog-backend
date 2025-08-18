@@ -1,14 +1,14 @@
-import { PostsRepository } from "../../dataAccess/repositories/posts.repository";
+import { PostRepository } from "../../dataAccess/repositories/posts.repository";
 
 export class PostService {
-    private postRepo = new PostsRepository();
+    private postRepo = new PostRepository();
 
-    async createPost(data: { author_id: number; category_id: number; title: string; content: string }) {
-        const existing = await this.postRepo.findByTitle(data.title);
+    async createPost(author_id: number, category_id: number, title:string, content: string) {
+        const existing = await this.postRepo.findByTitle(title);
         if (existing) {
             throw new Error("This post title already exists.");
         }
-        return this.postRepo.create(data);
+        return this.postRepo.create({author_id, category_id, title, content});
     }
 
     async getAllPosts() {

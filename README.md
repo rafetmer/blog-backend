@@ -123,8 +123,3 @@ Tüm endpoint'ler `/api` ön eki ile başlar. Korumalı rotalar, `Authorization:
 | `DELETE` | `/:id`   | Belirli bir kategoriyi siler.          |                            |
 
 ---
-
-## 📜 Lisans
-
-Bu proje **MIT Lisansı** ile lisanslanmıştır.\
-Detaylar için [LICENSE](LICENSE) dosyasına göz atın.
